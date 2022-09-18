@@ -21,12 +21,14 @@
 *.a
 *.la
 *.lo
+.libs
 
 # Shared objects (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
 *.dylib
+*.slo
 
 # Executables
 *.exe
