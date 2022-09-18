@@ -59,10 +59,10 @@ fi
 %post
 tmp=$(mktemp -d ${TMPDIR:-/tmp}/mod_cspnonce_rpm.XXXXXXX)
 #echo "temp is $tmp"
-trap "rm -f $tmp" EXIT
+trap "rm -rf $tmp" EXIT
 mv %{_httpd_moddir}/%{name}.so $tmp/
 %{_httpd_apxs} -i -A -n %{name} $tmp/%{name}.so
-rm -f $tmp
+rm -rf $tmp
 
 %changelog
 * Sat Sep 17 2022 Cuck Lane <lane@dchooz.org> - 1.4.0
